@@ -38,3 +38,10 @@ db.knex.schema.hasTable('users').then(function(exists) {
 });
 
 module.exports = db;
+
+
+
+
+// var schema = mongoose.Schema({name: 'string', ability: 'string', timestamp: {type: Date, default: Date.now}});
+// var Student = mongoose.model('Student', schema);
+// Student.create({name: 'robin', ability: 'being foreign', height: 'tall'});
