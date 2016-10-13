@@ -4,8 +4,6 @@ var expect = require('chai').expect;
 var app = require('../server-config.js');
 
 var db = require('../app/config');
-// var User = require('../app/models/user');
-// var Link = require('../app/models/link');
 var User = require('../mongod').users;
 var Link = require('../mongod').urls;
 
@@ -97,7 +95,8 @@ describe('', function() {
           url: 'http://www.roflzoo.com/',
           title: 'Funny pictures of animals, funny dog pictures',
           baseUrl: 'http://127.0.0.1:4568',
-          visits: 0
+          visits: 0,
+          code: 'a67rt0'
         });
 
         link.save(function() {
