@@ -71,7 +71,11 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      prodServer: {
+      options: {
+        stderr: false
+      },
+      target: {
+        command: 'git push live master'
       }
     },
   });
@@ -91,7 +95,8 @@ module.exports = function(grunt) {
     grunt.task.run([ 'nodemon', 'watch' ]);
   });
 
-  grunt.registerTask('nick', ['eslint', 'mochaTest', 'concat', 'uglify', 'nodemon']);
+  grunt.registerTask('runLocal', ['eslint', 'mochaTest', 'concat', 'uglify', 'nodemon']);
+  grunt.registerTask('push', ['eslint', 'mochaTest', 'concat', 'uglify', 'shell']);
 
   ////////////////////////////////////////////////////
   // Main grunt tasks
